@@ -37,10 +37,12 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/adm_dkijakarta_kelurahan_1.js"></script>
-        <script src="data/adm_dkijakarta_2.js"></script>
-        <script src="data/older_adult_proportion_16.js"></script>
-        <script src="data/ZonalWelfareLossFunctionZWLF_17.js"></script>
+        <script src="data/BatasAdministrasiKelurahanDKIJakarta_1.js"></script>
+        <script src="data/BatasAdministrasiKotaDKIJakarta_2.js"></script>
+        <script src="data/SocioeconomicResilience2045_5.js"></script>
+        <script src="data/SocioeconomicResilience2025_6.js"></script>
+        <script src="data/FloodRisk2025_7.js"></script>
+        <script src="data/FloodRisk2045_8.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -59,7 +61,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.381265079128997,106.64436618206743],[-6.065493698207126,107.01501446273613]]);
+        }).fitBounds([[-6.411239081074515,106.63637783843106],[-5.948182844128064,107.17984442260047]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -118,7 +120,7 @@
         });
         layer_EsriDarkGray_0;
         map.addLayer(layer_EsriDarkGray_0);
-        function pop_adm_dkijakarta_kelurahan_1(feature, layer) {
+        function pop_BatasAdministrasiKelurahanDKIJakarta_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -150,36 +152,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_adm_dkijakarta_kelurahan_1_0() {
+        function style_BatasAdministrasiKelurahanDKIJakarta_1_0() {
             return {
-                pane: 'pane_adm_dkijakarta_kelurahan_1',
+                pane: 'pane_BatasAdministrasiKelurahanDKIJakarta_1',
                 opacity: 1,
-                color: 'rgba(231,243,255,1.0)',
+                color: 'rgba(166,206,227,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(166,206,227,0.0)',
+                fillColor: 'rgba(213,180,60,0.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_adm_dkijakarta_kelurahan_1');
-        map.getPane('pane_adm_dkijakarta_kelurahan_1').style.zIndex = 401;
-        map.getPane('pane_adm_dkijakarta_kelurahan_1').style['mix-blend-mode'] = 'normal';
-        var layer_adm_dkijakarta_kelurahan_1 = new L.geoJson(json_adm_dkijakarta_kelurahan_1, {
+        map.createPane('pane_BatasAdministrasiKelurahanDKIJakarta_1');
+        map.getPane('pane_BatasAdministrasiKelurahanDKIJakarta_1').style.zIndex = 401;
+        map.getPane('pane_BatasAdministrasiKelurahanDKIJakarta_1').style['mix-blend-mode'] = 'normal';
+        var layer_BatasAdministrasiKelurahanDKIJakarta_1 = new L.geoJson(json_BatasAdministrasiKelurahanDKIJakarta_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_adm_dkijakarta_kelurahan_1',
-            layerName: 'layer_adm_dkijakarta_kelurahan_1',
-            pane: 'pane_adm_dkijakarta_kelurahan_1',
-            onEachFeature: pop_adm_dkijakarta_kelurahan_1,
-            style: style_adm_dkijakarta_kelurahan_1_0,
+            dataVar: 'json_BatasAdministrasiKelurahanDKIJakarta_1',
+            layerName: 'layer_BatasAdministrasiKelurahanDKIJakarta_1',
+            pane: 'pane_BatasAdministrasiKelurahanDKIJakarta_1',
+            onEachFeature: pop_BatasAdministrasiKelurahanDKIJakarta_1,
+            style: style_BatasAdministrasiKelurahanDKIJakarta_1_0,
         });
-        bounds_group.addLayer(layer_adm_dkijakarta_kelurahan_1);
-        map.addLayer(layer_adm_dkijakarta_kelurahan_1);
-        function pop_adm_dkijakarta_2(feature, layer) {
+        bounds_group.addLayer(layer_BatasAdministrasiKelurahanDKIJakarta_1);
+        map.addLayer(layer_BatasAdministrasiKelurahanDKIJakarta_1);
+        function pop_BatasAdministrasiKotaDKIJakarta_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -243,7 +245,8 @@
                         <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">WADMKD</th>\
+                        <td>' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(String(feature.properties['WADMKK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -277,291 +280,52 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_adm_dkijakarta_2_0() {
+        function style_BatasAdministrasiKotaDKIJakarta_2_0() {
             return {
-                pane: 'pane_adm_dkijakarta_2',
+                pane: 'pane_BatasAdministrasiKotaDKIJakarta_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(31,120,180,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,139,143,1.0)',
+                fillColor: 'rgba(125,139,143,0.0)',
                 interactive: false,
             }
         }
-        map.createPane('pane_adm_dkijakarta_2');
-        map.getPane('pane_adm_dkijakarta_2').style.zIndex = 402;
-        map.getPane('pane_adm_dkijakarta_2').style['mix-blend-mode'] = 'normal';
-        var layer_adm_dkijakarta_2 = new L.geoJson(json_adm_dkijakarta_2, {
+        map.createPane('pane_BatasAdministrasiKotaDKIJakarta_2');
+        map.getPane('pane_BatasAdministrasiKotaDKIJakarta_2').style.zIndex = 402;
+        map.getPane('pane_BatasAdministrasiKotaDKIJakarta_2').style['mix-blend-mode'] = 'normal';
+        var layer_BatasAdministrasiKotaDKIJakarta_2 = new L.geoJson(json_BatasAdministrasiKotaDKIJakarta_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_adm_dkijakarta_2',
-            layerName: 'layer_adm_dkijakarta_2',
-            pane: 'pane_adm_dkijakarta_2',
-            onEachFeature: pop_adm_dkijakarta_2,
-            style: style_adm_dkijakarta_2_0,
+            dataVar: 'json_BatasAdministrasiKotaDKIJakarta_2',
+            layerName: 'layer_BatasAdministrasiKotaDKIJakarta_2',
+            pane: 'pane_BatasAdministrasiKotaDKIJakarta_2',
+            onEachFeature: pop_BatasAdministrasiKotaDKIJakarta_2,
+            style: style_BatasAdministrasiKotaDKIJakarta_2_0,
         });
-        bounds_group.addLayer(layer_adm_dkijakarta_2);
-        map.addLayer(layer_adm_dkijakarta_2);
-        map.createPane('pane_floodmapsQ2_3');
-        map.getPane('pane_floodmapsQ2_3').style.zIndex = 403;
-        var img_floodmapsQ2_3 = 'data/floodmapsQ2_3.png';
-        var img_bounds_floodmapsQ2_3 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ2_3 = new L.imageOverlay(img_floodmapsQ2_3,
-                                              img_bounds_floodmapsQ2_3,
-                                              {pane: 'pane_floodmapsQ2_3'});
-        bounds_group.addLayer(layer_floodmapsQ2_3);
-        map.addLayer(layer_floodmapsQ2_3);
-        map.createPane('pane_UrbanZoning_2024_4');
-        map.getPane('pane_UrbanZoning_2024_4').style.zIndex = 404;
-        var img_UrbanZoning_2024_4 = 'data/UrbanZoning_2024_4.png';
-        var img_bounds_UrbanZoning_2024_4 = [[-6.372738457072297,106.68562994107421],[-6.073868962045733,106.9734501581061]];
-        var layer_UrbanZoning_2024_4 = new L.imageOverlay(img_UrbanZoning_2024_4,
-                                              img_bounds_UrbanZoning_2024_4,
-                                              {pane: 'pane_UrbanZoning_2024_4'});
-        bounds_group.addLayer(layer_UrbanZoning_2024_4);
-        map.addLayer(layer_UrbanZoning_2024_4);
-        map.createPane('pane_floodmapsQ5_5');
-        map.getPane('pane_floodmapsQ5_5').style.zIndex = 405;
-        var img_floodmapsQ5_5 = 'data/floodmapsQ5_5.png';
-        var img_bounds_floodmapsQ5_5 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ5_5 = new L.imageOverlay(img_floodmapsQ5_5,
-                                              img_bounds_floodmapsQ5_5,
-                                              {pane: 'pane_floodmapsQ5_5'});
-        bounds_group.addLayer(layer_floodmapsQ5_5);
-        map.addLayer(layer_floodmapsQ5_5);
-        map.createPane('pane_floodmapsQ10_6');
-        map.getPane('pane_floodmapsQ10_6').style.zIndex = 406;
-        var img_floodmapsQ10_6 = 'data/floodmapsQ10_6.png';
-        var img_bounds_floodmapsQ10_6 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ10_6 = new L.imageOverlay(img_floodmapsQ10_6,
-                                              img_bounds_floodmapsQ10_6,
-                                              {pane: 'pane_floodmapsQ10_6'});
-        bounds_group.addLayer(layer_floodmapsQ10_6);
-        map.addLayer(layer_floodmapsQ10_6);
-        map.createPane('pane_floodmapsQ25_7');
-        map.getPane('pane_floodmapsQ25_7').style.zIndex = 407;
-        var img_floodmapsQ25_7 = 'data/floodmapsQ25_7.png';
-        var img_bounds_floodmapsQ25_7 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ25_7 = new L.imageOverlay(img_floodmapsQ25_7,
-                                              img_bounds_floodmapsQ25_7,
-                                              {pane: 'pane_floodmapsQ25_7'});
-        bounds_group.addLayer(layer_floodmapsQ25_7);
-        map.addLayer(layer_floodmapsQ25_7);
-        map.createPane('pane_floodmapsQ50_8');
-        map.getPane('pane_floodmapsQ50_8').style.zIndex = 408;
-        var img_floodmapsQ50_8 = 'data/floodmapsQ50_8.png';
-        var img_bounds_floodmapsQ50_8 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ50_8 = new L.imageOverlay(img_floodmapsQ50_8,
-                                              img_bounds_floodmapsQ50_8,
-                                              {pane: 'pane_floodmapsQ50_8'});
-        bounds_group.addLayer(layer_floodmapsQ50_8);
-        map.addLayer(layer_floodmapsQ50_8);
-        map.createPane('pane_floodmapsQ100_9');
-        map.getPane('pane_floodmapsQ100_9').style.zIndex = 409;
-        var img_floodmapsQ100_9 = 'data/floodmapsQ100_9.png';
-        var img_bounds_floodmapsQ100_9 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
-        var layer_floodmapsQ100_9 = new L.imageOverlay(img_floodmapsQ100_9,
-                                              img_bounds_floodmapsQ100_9,
-                                              {pane: 'pane_floodmapsQ100_9'});
-        bounds_group.addLayer(layer_floodmapsQ100_9);
-        map.addLayer(layer_floodmapsQ100_9);
-        map.createPane('pane_floodmapsQ2_10');
-        map.getPane('pane_floodmapsQ2_10').style.zIndex = 410;
-        var img_floodmapsQ2_10 = 'data/floodmapsQ2_10.png';
-        var img_bounds_floodmapsQ2_10 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ2_10 = new L.imageOverlay(img_floodmapsQ2_10,
-                                              img_bounds_floodmapsQ2_10,
-                                              {pane: 'pane_floodmapsQ2_10'});
-        bounds_group.addLayer(layer_floodmapsQ2_10);
-        map.addLayer(layer_floodmapsQ2_10);
-        map.createPane('pane_floodmapsQ5_11');
-        map.getPane('pane_floodmapsQ5_11').style.zIndex = 411;
-        var img_floodmapsQ5_11 = 'data/floodmapsQ5_11.png';
-        var img_bounds_floodmapsQ5_11 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ5_11 = new L.imageOverlay(img_floodmapsQ5_11,
-                                              img_bounds_floodmapsQ5_11,
-                                              {pane: 'pane_floodmapsQ5_11'});
-        bounds_group.addLayer(layer_floodmapsQ5_11);
-        map.addLayer(layer_floodmapsQ5_11);
-        map.createPane('pane_floodmapsQ10_12');
-        map.getPane('pane_floodmapsQ10_12').style.zIndex = 412;
-        var img_floodmapsQ10_12 = 'data/floodmapsQ10_12.png';
-        var img_bounds_floodmapsQ10_12 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ10_12 = new L.imageOverlay(img_floodmapsQ10_12,
-                                              img_bounds_floodmapsQ10_12,
-                                              {pane: 'pane_floodmapsQ10_12'});
-        bounds_group.addLayer(layer_floodmapsQ10_12);
-        map.addLayer(layer_floodmapsQ10_12);
-        map.createPane('pane_floodmapsQ25_13');
-        map.getPane('pane_floodmapsQ25_13').style.zIndex = 413;
-        var img_floodmapsQ25_13 = 'data/floodmapsQ25_13.png';
-        var img_bounds_floodmapsQ25_13 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ25_13 = new L.imageOverlay(img_floodmapsQ25_13,
-                                              img_bounds_floodmapsQ25_13,
-                                              {pane: 'pane_floodmapsQ25_13'});
-        bounds_group.addLayer(layer_floodmapsQ25_13);
-        map.addLayer(layer_floodmapsQ25_13);
-        map.createPane('pane_floodmapsQ50_14');
-        map.getPane('pane_floodmapsQ50_14').style.zIndex = 414;
-        var img_floodmapsQ50_14 = 'data/floodmapsQ50_14.png';
-        var img_bounds_floodmapsQ50_14 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ50_14 = new L.imageOverlay(img_floodmapsQ50_14,
-                                              img_bounds_floodmapsQ50_14,
-                                              {pane: 'pane_floodmapsQ50_14'});
-        bounds_group.addLayer(layer_floodmapsQ50_14);
-        map.addLayer(layer_floodmapsQ50_14);
-        map.createPane('pane_floodmapsQ100_15');
-        map.getPane('pane_floodmapsQ100_15').style.zIndex = 415;
-        var img_floodmapsQ100_15 = 'data/floodmapsQ100_15.png';
-        var img_bounds_floodmapsQ100_15 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
-        var layer_floodmapsQ100_15 = new L.imageOverlay(img_floodmapsQ100_15,
-                                              img_bounds_floodmapsQ100_15,
-                                              {pane: 'pane_floodmapsQ100_15'});
-        bounds_group.addLayer(layer_floodmapsQ100_15);
-        map.addLayer(layer_floodmapsQ100_15);
-        function pop_older_adult_proportion_16(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(String(feature.properties['WADMKK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['kota'] !== null ? autolinker.link(String(feature.properties['kota']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['kecamatan'] !== null ? autolinker.link(String(feature.properties['kecamatan']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['kelurahan'] !== null ? autolinker.link(String(feature.properties['kelurahan']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['older_prop'] !== null ? autolinker.link(String(feature.properties['older_prop']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_older_adult_proportion_16_0(feature) {
-            if (feature.properties['older_prop'] >= 0.030963 && feature.properties['older_prop'] <= 0.048887 ) {
-                return {
-                pane: 'pane_older_adult_proportion_16',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,4,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['older_prop'] >= 0.048887 && feature.properties['older_prop'] <= 0.056874 ) {
-                return {
-                pane: 'pane_older_adult_proportion_16',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(80,18,123,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['older_prop'] >= 0.056874 && feature.properties['older_prop'] <= 0.065715 ) {
-                return {
-                pane: 'pane_older_adult_proportion_16',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(182,55,122,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['older_prop'] >= 0.065715 && feature.properties['older_prop'] <= 0.080480 ) {
-                return {
-                pane: 'pane_older_adult_proportion_16',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(251,135,97,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['older_prop'] >= 0.080480 && feature.properties['older_prop'] <= 0.168939 ) {
-                return {
-                pane: 'pane_older_adult_proportion_16',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(252,253,191,1.0)',
-                interactive: false,
-            }
-            }
-        }
-        map.createPane('pane_older_adult_proportion_16');
-        map.getPane('pane_older_adult_proportion_16').style.zIndex = 416;
-        map.getPane('pane_older_adult_proportion_16').style['mix-blend-mode'] = 'normal';
-        var layer_older_adult_proportion_16 = new L.geoJson(json_older_adult_proportion_16, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_older_adult_proportion_16',
-            layerName: 'layer_older_adult_proportion_16',
-            pane: 'pane_older_adult_proportion_16',
-            onEachFeature: pop_older_adult_proportion_16,
-            style: style_older_adult_proportion_16_0,
-        });
-        bounds_group.addLayer(layer_older_adult_proportion_16);
-        map.addLayer(layer_older_adult_proportion_16);
-        function pop_ZonalWelfareLossFunctionZWLF_17(feature, layer) {
+        bounds_group.addLayer(layer_BatasAdministrasiKotaDKIJakarta_2);
+        map.createPane('pane_floodmapsQ100_3');
+        map.getPane('pane_floodmapsQ100_3').style.zIndex = 403;
+        var img_floodmapsQ100_3 = 'data/floodmapsQ100_3.png';
+        var img_bounds_floodmapsQ100_3 = [[-6.373181107793654,106.6857534153903],[-6.068840850856972,106.9741161167486]];
+        var layer_floodmapsQ100_3 = new L.imageOverlay(img_floodmapsQ100_3,
+                                              img_bounds_floodmapsQ100_3,
+                                              {pane: 'pane_floodmapsQ100_3'});
+        bounds_group.addLayer(layer_floodmapsQ100_3);
+        map.addLayer(layer_floodmapsQ100_3);
+        map.createPane('pane_floodmapsQ100_4');
+        map.getPane('pane_floodmapsQ100_4').style.zIndex = 404;
+        var img_floodmapsQ100_4 = 'data/floodmapsQ100_4.png';
+        var img_bounds_floodmapsQ100_4 = [[-6.373317184875524,106.68561693453319],[-6.068523266861424,106.97443292471243]];
+        var layer_floodmapsQ100_4 = new L.imageOverlay(img_floodmapsQ100_4,
+                                              img_bounds_floodmapsQ100_4,
+                                              {pane: 'pane_floodmapsQ100_4'});
+        bounds_group.addLayer(layer_floodmapsQ100_4);
+        function pop_SocioeconomicResilience2045_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -643,7 +407,26 @@
                         <td colspan="2">' + (feature.properties['CapLoss'] !== null ? autolinker.link(String(feature.properties['CapLoss']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WelfareLos'] !== null ? autolinker.link(String(feature.properties['WelfareLos']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Resilience'] !== null ? autolinker.link(String(feature.properties['Resilience']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_2045'] !== null ? autolinker.link(String(feature.properties['EAD_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2045'] !== null ? autolinker.link(String(feature.properties['EAD_RP2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP_2045'] !== null ? autolinker.link(String(feature.properties['EPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP_2045'] !== null ? autolinker.link(String(feature.properties['IPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CL_2045'] !== null ? autolinker.link(String(feature.properties['CL_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Resil_2045</th>\
+                        <td>' + (feature.properties['Resil_2045'] !== null ? autolinker.link(String(feature.properties['Resil_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -653,11 +436,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ZonalWelfareLossFunctionZWLF_17_0(feature) {
-            switch(String(feature.properties['WelfareLos'])) {
-                default:
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+        function style_SocioeconomicResilience2045_5_0(feature) {
+            if (feature.properties['Resil_2045'] >= 0.291000 && feature.properties['Resil_2045'] <= 0.500000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2045_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -666,13 +448,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,0,4,1.0)',
+                fillColor: 'rgba(68,1,84,1.0)',
                 interactive: false,
             }
-                    break;
-                case '47.691':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+            }
+            if (feature.properties['Resil_2045'] >= 0.500000 && feature.properties['Resil_2045'] <= 1.000000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2045_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -681,13 +463,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(11,9,36,1.0)',
+                fillColor: 'rgba(33,144,141,1.0)',
                 interactive: false,
             }
-                    break;
-                case '51.858':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+            }
+            if (feature.properties['Resil_2045'] >= 1.000000 && feature.properties['Resil_2045'] <= 4.510000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2045_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -696,13 +478,310 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(32,17,76,1.0)',
+                fillColor: 'rgba(253,231,37,1.0)',
                 interactive: false,
             }
-                    break;
-                case '54.854':
+            }
+        }
+        map.createPane('pane_SocioeconomicResilience2045_5');
+        map.getPane('pane_SocioeconomicResilience2045_5').style.zIndex = 405;
+        map.getPane('pane_SocioeconomicResilience2045_5').style['mix-blend-mode'] = 'normal';
+        var layer_SocioeconomicResilience2045_5 = new L.geoJson(json_SocioeconomicResilience2045_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SocioeconomicResilience2045_5',
+            layerName: 'layer_SocioeconomicResilience2045_5',
+            pane: 'pane_SocioeconomicResilience2045_5',
+            onEachFeature: pop_SocioeconomicResilience2045_5,
+            style: style_SocioeconomicResilience2045_5_0,
+        });
+        bounds_group.addLayer(layer_SocioeconomicResilience2045_5);
+        function pop_SocioeconomicResilience2025_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(String(feature.properties['WADMKK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R101N'] !== null ? autolinker.link(String(feature.properties['R101N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R102N'] !== null ? autolinker.link(String(feature.properties['R102N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R103N'] !== null ? autolinker.link(String(feature.properties['R103N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R104N'] !== null ? autolinker.link(String(feature.properties['R104N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R710'] !== null ? autolinker.link(String(feature.properties['R710']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD'] !== null ? autolinker.link(String(feature.properties['EAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Fixed_Cap'] !== null ? autolinker.link(String(feature.properties['Fixed_Cap']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2025'] !== null ? autolinker.link(String(feature.properties['EAD_RP2025']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Poor (ppl)'] !== null ? autolinker.link(String(feature.properties['Poor (ppl)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['T_rec_mo'] !== null ? autolinker.link(String(feature.properties['T_rec_mo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R_per_year'] !== null ? autolinker.link(String(feature.properties['R_per_year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP'] !== null ? autolinker.link(String(feature.properties['IPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP'] !== null ? autolinker.link(String(feature.properties['EPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Apk'] !== null ? autolinker.link(String(feature.properties['Apk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Elasticity'] !== null ? autolinker.link(String(feature.properties['Elasticity']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Wprime'] !== null ? autolinker.link(String(feature.properties['Wprime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Discount'] !== null ? autolinker.link(String(feature.properties['Discount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CapLoss'] !== null ? autolinker.link(String(feature.properties['CapLoss']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Resilience'] !== null ? autolinker.link(String(feature.properties['Resilience']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_2045'] !== null ? autolinker.link(String(feature.properties['EAD_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2045'] !== null ? autolinker.link(String(feature.properties['EAD_RP2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP_2045'] !== null ? autolinker.link(String(feature.properties['EPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP_2045'] !== null ? autolinker.link(String(feature.properties['IPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CL_2045'] !== null ? autolinker.link(String(feature.properties['CL_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Resil_2045'] !== null ? autolinker.link(String(feature.properties['Resil_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_SocioeconomicResilience2025_6_0(feature) {
+            if (feature.properties['Resilience'] >= 0.291000 && feature.properties['Resilience'] <= 0.500000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2025_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(68,1,84,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['Resilience'] >= 0.500000 && feature.properties['Resilience'] <= 1.000000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2025_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(33,144,141,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['Resilience'] >= 1.000000 && feature.properties['Resilience'] <= 2.000000 ) {
+                return {
+                pane: 'pane_SocioeconomicResilience2025_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,231,37,1.0)',
+                interactive: false,
+            }
+            }
+        }
+        map.createPane('pane_SocioeconomicResilience2025_6');
+        map.getPane('pane_SocioeconomicResilience2025_6').style.zIndex = 406;
+        map.getPane('pane_SocioeconomicResilience2025_6').style['mix-blend-mode'] = 'normal';
+        var layer_SocioeconomicResilience2025_6 = new L.geoJson(json_SocioeconomicResilience2025_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SocioeconomicResilience2025_6',
+            layerName: 'layer_SocioeconomicResilience2025_6',
+            pane: 'pane_SocioeconomicResilience2025_6',
+            onEachFeature: pop_SocioeconomicResilience2025_6,
+            style: style_SocioeconomicResilience2025_6_0,
+        });
+        bounds_group.addLayer(layer_SocioeconomicResilience2025_6);
+        map.addLayer(layer_SocioeconomicResilience2025_6);
+        function pop_FloodRisk2025_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(String(feature.properties['WADMKK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R101N'] !== null ? autolinker.link(String(feature.properties['R101N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R102N'] !== null ? autolinker.link(String(feature.properties['R102N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R103N'] !== null ? autolinker.link(String(feature.properties['R103N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R104N'] !== null ? autolinker.link(String(feature.properties['R104N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R710'] !== null ? autolinker.link(String(feature.properties['R710']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD'] !== null ? autolinker.link(String(feature.properties['EAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Fixed_Cap'] !== null ? autolinker.link(String(feature.properties['Fixed_Cap']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2025'] !== null ? autolinker.link(String(feature.properties['EAD_RP2025']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Poor (ppl)'] !== null ? autolinker.link(String(feature.properties['Poor (ppl)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['T_rec_mo'] !== null ? autolinker.link(String(feature.properties['T_rec_mo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R_per_year'] !== null ? autolinker.link(String(feature.properties['R_per_year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP'] !== null ? autolinker.link(String(feature.properties['IPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP'] !== null ? autolinker.link(String(feature.properties['EPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Apk'] !== null ? autolinker.link(String(feature.properties['Apk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Elasticity'] !== null ? autolinker.link(String(feature.properties['Elasticity']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Wprime'] !== null ? autolinker.link(String(feature.properties['Wprime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Discount'] !== null ? autolinker.link(String(feature.properties['Discount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CapLoss'] !== null ? autolinker.link(String(feature.properties['CapLoss']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Resilience'] !== null ? autolinker.link(String(feature.properties['Resilience']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_2045'] !== null ? autolinker.link(String(feature.properties['EAD_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2045'] !== null ? autolinker.link(String(feature.properties['EAD_RP2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP_2045'] !== null ? autolinker.link(String(feature.properties['EPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP_2045'] !== null ? autolinker.link(String(feature.properties['IPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CL_2045'] !== null ? autolinker.link(String(feature.properties['CL_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Resil_2045'] !== null ? autolinker.link(String(feature.properties['Resil_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_FloodRisk2025_7_0(feature) {
+            switch(String(feature.properties['EAD'])) {
+                case '1':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2025_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -715,39 +794,9 @@
                 interactive: false,
             }
                     break;
-                case '56.151':
+                case '2':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(87,21,125,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '57.994':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(114,31,129,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '402.582':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2025_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -760,39 +809,9 @@
                 interactive: false,
             }
                     break;
-                case '437.757':
+                case '4':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(168,50,125,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '463.042':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(196,60,116,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '473.994':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2025_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -805,39 +824,9 @@
                 interactive: false,
             }
                     break;
-                case '489.553':
+                case '15':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(241,96,93,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '4576.664':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(250,127,94,1.0)',
-                interactive: false,
-            }
-                    break;
-                case '4976.536':
-                    return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2025_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -850,9 +839,138 @@
                 interactive: false,
             }
                     break;
-                case '5263.989':
+            }
+        }
+        map.createPane('pane_FloodRisk2025_7');
+        map.getPane('pane_FloodRisk2025_7').style.zIndex = 407;
+        map.getPane('pane_FloodRisk2025_7').style['mix-blend-mode'] = 'normal';
+        var layer_FloodRisk2025_7 = new L.geoJson(json_FloodRisk2025_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FloodRisk2025_7',
+            layerName: 'layer_FloodRisk2025_7',
+            pane: 'pane_FloodRisk2025_7',
+            onEachFeature: pop_FloodRisk2025_7,
+            style: style_FloodRisk2025_7_0,
+        });
+        bounds_group.addLayer(layer_FloodRisk2025_7);
+        map.addLayer(layer_FloodRisk2025_7);
+        function pop_FloodRisk2045_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(String(feature.properties['WADMKK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R101N'] !== null ? autolinker.link(String(feature.properties['R101N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R102N'] !== null ? autolinker.link(String(feature.properties['R102N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R103N'] !== null ? autolinker.link(String(feature.properties['R103N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R104N'] !== null ? autolinker.link(String(feature.properties['R104N']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R710'] !== null ? autolinker.link(String(feature.properties['R710']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD'] !== null ? autolinker.link(String(feature.properties['EAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Fixed_Cap'] !== null ? autolinker.link(String(feature.properties['Fixed_Cap']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2025'] !== null ? autolinker.link(String(feature.properties['EAD_RP2025']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Poor (ppl)'] !== null ? autolinker.link(String(feature.properties['Poor (ppl)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['T_rec_mo'] !== null ? autolinker.link(String(feature.properties['T_rec_mo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['R_per_year'] !== null ? autolinker.link(String(feature.properties['R_per_year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP'] !== null ? autolinker.link(String(feature.properties['IPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP'] !== null ? autolinker.link(String(feature.properties['EPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Apk'] !== null ? autolinker.link(String(feature.properties['Apk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Elasticity'] !== null ? autolinker.link(String(feature.properties['Elasticity']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Wprime'] !== null ? autolinker.link(String(feature.properties['Wprime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Discount'] !== null ? autolinker.link(String(feature.properties['Discount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CapLoss'] !== null ? autolinker.link(String(feature.properties['CapLoss']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Resilience'] !== null ? autolinker.link(String(feature.properties['Resilience']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_2045'] !== null ? autolinker.link(String(feature.properties['EAD_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EAD_RP2045'] !== null ? autolinker.link(String(feature.properties['EAD_RP2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPP_2045'] !== null ? autolinker.link(String(feature.properties['EPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IPP_2045'] !== null ? autolinker.link(String(feature.properties['IPP_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CL_2045'] !== null ? autolinker.link(String(feature.properties['CL_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Resil_2045</th>\
+                        <td>' + (feature.properties['Resil_2045'] !== null ? autolinker.link(String(feature.properties['Resil_2045']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_FloodRisk2045_8_0(feature) {
+            switch(String(feature.properties['EAD_2045'])) {
+                case '1':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2045_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -861,13 +979,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(254,191,132,1.0)',
+                fillColor: 'rgba(24,15,62,1.0)',
                 interactive: false,
             }
                     break;
-                case '5388.489':
+                case '2':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2045_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -876,13 +994,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(253,222,159,1.0)',
+                fillColor: 'rgba(69,15,118,1.0)',
                 interactive: false,
             }
                     break;
-                case '5565.363':
+                case '3':
                     return {
-                pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
+                pane: 'pane_FloodRisk2045_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -891,26 +1009,100 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(252,253,191,1.0)',
+                fillColor: 'rgba(114,31,129,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_FloodRisk2045_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(158,47,127,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_FloodRisk2045_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(205,63,113,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_FloodRisk2045_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(241,96,93,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '13':
+                    return {
+                pane: 'pane_FloodRisk2045_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,149,103,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_FloodRisk2045_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,201,141,1.0)',
                 interactive: false,
             }
                     break;
             }
         }
-        map.createPane('pane_ZonalWelfareLossFunctionZWLF_17');
-        map.getPane('pane_ZonalWelfareLossFunctionZWLF_17').style.zIndex = 417;
-        map.getPane('pane_ZonalWelfareLossFunctionZWLF_17').style['mix-blend-mode'] = 'normal';
-        var layer_ZonalWelfareLossFunctionZWLF_17 = new L.geoJson(json_ZonalWelfareLossFunctionZWLF_17, {
+        map.createPane('pane_FloodRisk2045_8');
+        map.getPane('pane_FloodRisk2045_8').style.zIndex = 408;
+        map.getPane('pane_FloodRisk2045_8').style['mix-blend-mode'] = 'normal';
+        var layer_FloodRisk2045_8 = new L.geoJson(json_FloodRisk2045_8, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_ZonalWelfareLossFunctionZWLF_17',
-            layerName: 'layer_ZonalWelfareLossFunctionZWLF_17',
-            pane: 'pane_ZonalWelfareLossFunctionZWLF_17',
-            onEachFeature: pop_ZonalWelfareLossFunctionZWLF_17,
-            style: style_ZonalWelfareLossFunctionZWLF_17_0,
+            dataVar: 'json_FloodRisk2045_8',
+            layerName: 'layer_FloodRisk2045_8',
+            pane: 'pane_FloodRisk2045_8',
+            onEachFeature: pop_FloodRisk2045_8,
+            style: style_FloodRisk2045_8_0,
         });
-        bounds_group.addLayer(layer_ZonalWelfareLossFunctionZWLF_17);
-        map.addLayer(layer_ZonalWelfareLossFunctionZWLF_17);
+        bounds_group.addLayer(layer_FloodRisk2045_8);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -965,29 +1157,21 @@
             }
         });
         var overlaysTree = [
-            {label: 'Zonal Welfare Loss Function (ZWLF)<br /><table><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_476911.png" /></td><td>47.691</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_518582.png" /></td><td>51.858</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_548543.png" /></td><td>54.854</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_561514.png" /></td><td>56.151</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_579945.png" /></td><td>57.994</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_4025826.png" /></td><td>402.582</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_4377577.png" /></td><td>437.757</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_4630428.png" /></td><td>463.042</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_4739949.png" /></td><td>473.994</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_48955310.png" /></td><td>489.553</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_457666411.png" /></td><td>4576.664</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_497653612.png" /></td><td>4976.536</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_526398913.png" /></td><td>5263.989</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_538848914.png" /></td><td>5388.489</td></tr><tr><td style="text-align: center;"><img src="legend/ZonalWelfareLossFunctionZWLF_17_556536315.png" /></td><td>5565.363</td></tr></table>', layer: layer_ZonalWelfareLossFunctionZWLF_17},
-        {label: '<b>Social Dataset</b>', collapsed: true, selectAllCheckbox: true, children: [
-            {label: 'older_adult_proportion<br /><table><tr><td style="text-align: center;"><img src="legend/older_adult_proportion_16_003100490.png" /></td><td>0.031 - 0.049 </td></tr><tr><td style="text-align: center;"><img src="legend/older_adult_proportion_16_004900571.png" /></td><td>0.049 - 0.057 </td></tr><tr><td style="text-align: center;"><img src="legend/older_adult_proportion_16_005700662.png" /></td><td>0.057 - 0.066 </td></tr><tr><td style="text-align: center;"><img src="legend/older_adult_proportion_16_00660083.png" /></td><td>0.066 - 0.08 </td></tr><tr><td style="text-align: center;"><img src="legend/older_adult_proportion_16_00801694.png" /></td><td>0.08 - 0.169 </td></tr></table>', layer: layer_older_adult_proportion_16},]},
-        {label: '<b>Existing Scenario</b>', collapsed: true, selectAllCheckbox: true, children: [
-            {label: "floodmapsQ100", layer: layer_floodmapsQ100_15},
-            {label: "floodmapsQ50", layer: layer_floodmapsQ50_14},
-            {label: "floodmapsQ25", layer: layer_floodmapsQ25_13},
-            {label: "floodmapsQ10", layer: layer_floodmapsQ10_12},
-            {label: "floodmapsQ5", layer: layer_floodmapsQ5_11},
-            {label: "floodmapsQ2", layer: layer_floodmapsQ2_10},]},
-        {label: '<b>Future Scenario</b>', collapsed: true, selectAllCheckbox: true, children: [
-            {label: "floodmapsQ100", layer: layer_floodmapsQ100_9},
-            {label: "floodmapsQ50", layer: layer_floodmapsQ50_8},
-            {label: "floodmapsQ25", layer: layer_floodmapsQ25_7},
-            {label: "floodmapsQ10", layer: layer_floodmapsQ10_6},
-            {label: "floodmapsQ5", layer: layer_floodmapsQ5_5},
-            {label: "UrbanZoning_2024", layer: layer_UrbanZoning_2024_4},
-            {label: "floodmapsQ2", layer: layer_floodmapsQ2_3},]},
+        {label: '<b>Flood Risk Result</b>',  selectAllCheckbox: true, children: [
+            {label: 'Flood Risk 2045<br /><table><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_1milUSD0.png" /></td><td>1 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_2milUSD1.png" /></td><td>2 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_3milUSD2.png" /></td><td>3 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_4milUSD3.png" /></td><td>4 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_5milUSD4.png" /></td><td>5 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_9milUSD5.png" /></td><td>9 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_13milUSD6.png" /></td><td>13 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2045_8_21milUSD7.png" /></td><td>21 mil. USD</td></tr></table>', layer: layer_FloodRisk2045_8},
+            {label: 'Flood Risk 2025<br /><table><tr><td style="text-align: center;"><img src="legend/FloodRisk2025_7_1milUSD0.png" /></td><td>1 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2025_7_2milUSD1.png" /></td><td>2 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2025_7_4milUSD2.png" /></td><td>4 mil. USD</td></tr><tr><td style="text-align: center;"><img src="legend/FloodRisk2025_7_15milUSD3.png" /></td><td>15 mil. USD</td></tr></table>', layer: layer_FloodRisk2025_7},]},
+        {label: '<b>SR Index</b>',  selectAllCheckbox: true, children: [
+            {label: 'Socioeconomic Resilience 2025<br /><table><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2025_6_050.png" /></td><td>< 0.5</td></tr><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2025_6_0511.png" /></td><td>0.5 - 1</td></tr><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2025_6_12.png" /></td><td>> 1</td></tr></table>', layer: layer_SocioeconomicResilience2025_6},
+            {label: 'Socioeconomic Resilience 2045<br /><table><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2045_5_050.png" /></td><td>< 0.5</td></tr><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2045_5_0511.png" /></td><td>0.5 - 1</td></tr><tr><td style="text-align: center;"><img src="legend/SocioeconomicResilience2045_5_12.png" /></td><td>> 1</td></tr></table>', layer: layer_SocioeconomicResilience2045_5},]},
+        {label: '<b>Existing Scenario</b>',  selectAllCheckbox: true, children: [
+            {label: "floodmapsQ100", layer: layer_floodmapsQ100_4},]},
+        {label: '<b>Future Scenario</b>',  selectAllCheckbox: true, children: [
+            {label: "floodmapsQ100", layer: layer_floodmapsQ100_3},]},
         {label: '<b>Administrative Boundary</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/adm_dkijakarta_2.png" /> adm_dki-jakarta', layer: layer_adm_dkijakarta_2},
-            {label: '<img src="legend/adm_dkijakarta_kelurahan_1.png" /> adm_dki-jakarta_kelurahan', layer: layer_adm_dkijakarta_kelurahan_1},]},
-        {label: '<b>Base Map</b>', collapsed: true, selectAllCheckbox: true, children: [
-            {label: "Esri Dark Gray", layer: layer_EsriDarkGray_0, radioGroup: 'bm' },]},]
+            {label: '<img src="legend/BatasAdministrasiKotaDKIJakarta_2.png" /> Batas Administrasi Kota DKI Jakarta', layer: layer_BatasAdministrasiKotaDKIJakarta_2},
+            {label: '<img src="legend/BatasAdministrasiKelurahanDKIJakarta_1.png" /> Batas Administrasi Kelurahan DKI Jakarta', layer: layer_BatasAdministrasiKelurahanDKIJakarta_1},]},
+        {label: '<b>Base Map</b>',  selectAllCheckbox: true, children: [
+            {label: "Esri Dark Gray", layer: layer_EsriDarkGray_0},]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -995,24 +1179,64 @@
             //openedSymbol: '&#8863; &#x1f5c1;',
             //collapseAll: 'Collapse all',
             //expandAll: 'Expand all',
-            collapsed: true,
+            collapsed: false, 
         });
         lay.addTo(map);
+		document.addEventListener("DOMContentLoaded", function() {
+            // set new Layers List height which considers toggle icon
+            function newLayersListHeight() {
+                var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
+                if (layerScrollbarElement) {
+                    var layersListElement = document.querySelector('.leaflet-control-layers-list');
+                    var originalHeight = layersListElement.style.height 
+                        || window.getComputedStyle(layersListElement).height;
+                    var newHeight = parseFloat(originalHeight) - 50;
+                    layersListElement.style.height = newHeight + 'px';
+                }
+            }
+            var isLayersListExpanded = true;
+            var controlLayersElement = document.querySelector('.leaflet-control-layers');
+            var toggleLayerControl = document.querySelector('.leaflet-control-layers-toggle');
+            // toggle Collapsed/Expanded and apply new Layers List height
+            toggleLayerControl.addEventListener('click', function() {
+                if (isLayersListExpanded) {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                } else {
+                    controlLayersElement.classList.add('leaflet-control-layers-expanded');
+                }
+                isLayersListExpanded = !isLayersListExpanded;
+                newLayersListHeight()
+            });	
+			// apply new Layers List height if toggle layerstree
+			if (controlLayersElement) {
+				controlLayersElement.addEventListener('click', function(event) {
+					var toggleLayerHeaderPointer = event.target.closest('.leaflet-layerstree-header-pointer span');
+					if (toggleLayerHeaderPointer) {
+						newLayersListHeight();
+					}
+				});
+			}
+            // Collapsed/Expanded at Start to apply new height
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            // Collapsed touch/small screen
+            var isSmallScreen = window.innerWidth < 650;
+            if (isSmallScreen) {
+                setTimeout(function() {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                    isLayersListExpanded = !isLayersListExpanded;
+                }, 500);
+            }  
+        });       
         setBounds();
         L.ImageOverlay.include({
             getBounds: function () {
                 return this._bounds;
             }
-        });
-        resetLabels([layer_adm_dkijakarta_kelurahan_1]);
-        map.on("zoomend", function(){
-            resetLabels([layer_adm_dkijakarta_kelurahan_1]);
-        });
-        map.on("layeradd", function(){
-            resetLabels([layer_adm_dkijakarta_kelurahan_1]);
-        });
-        map.on("layerremove", function(){
-            resetLabels([layer_adm_dkijakarta_kelurahan_1]);
         });
         </script>
     </body>
